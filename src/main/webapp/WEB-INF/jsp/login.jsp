@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
     <head>
                 <meta charset="utf-8">
@@ -5,23 +6,16 @@
                 <title>Moscow Raceway | Login</title>
                 <div class="logo-head">
                     <img id="logo" src="css/img/logo.png"></img>
-                    <a id="title" href="index.html">Administration System</a>
+                    <a id="title" href="/">Administration System</a>
                     <div class="log-buttons">
-                         <% 
-                            if(((String)pageContext.findAttribute("name")).isEmpty()) {
-
-                                out.println("<a href='/register' class='register'>SIGN UP</a>");
-                                out.println("<span class='vertical-devider'></span>");
-                                out.println("<a href='/login' class='login'>SIGN IN</a>");
-                        
-                            }else{
-                                out.println("<a>"+pageContext.findAttribute("name")+"</a>");
-                            }
-                        %>
+                        <a href="register.html" class="register">SIGN UP</a>
+                        <span class="vertical-devider"></span>
+                        <a href="/login" class="login">SIGN IN</a>
                     </div>
                 </div>
     </head>
     <div class="login-box">
+        <form:form method="POST" action="/api/login" modelAttribute="user">
         <h1>Login</h1>
          <input type="text" placeholder="Input your login">
          <br>
@@ -32,7 +26,7 @@
             <div>Autologin <input type="checkbox"></div>
          </div>
          <br>
-         <input type="button" value="Login">
-                
+         <input type="submit" value="Login">
+        </form:form>       
     </div>
 </html>

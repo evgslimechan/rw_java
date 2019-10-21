@@ -1,4 +1,5 @@
-<%@ page import="java.lang.String" %>
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,19 +10,11 @@
         <title>Moscow Raceway | Home</title>
         <div class="logo-head">
             <img id="logo" src="css/img/logo.png" oncontextmenu="return false" ondragstart="return false"></img>
-            <a id="title" href="index.html">Administration System</a>
+            <a id="title" href="/">Administration System</a>
             <div class="log-buttons">
-                <% 
-                            if(((String)pageContext.findAttribute("name")).isEmpty()) {
-
-                                out.println("<a href='/register' class='register'>SIGN UP</a>");
-                                out.println("<span class='vertical-devider'></span>");
-                                out.println("<a href='/login' class='login'>SIGN IN</a>");
-                        
-                            }else{
-                                out.println("<a>"+pageContext.findAttribute("name")+"</a>");
-                            }
-                        %>
+                <a href="/registerl" class="register">SIGN UP</a>
+                <span class="vertical-devider"></span>
+                <a href="/login" class="login"> SIGN IN</a>
             </div>
         </div>
     </head>
@@ -47,7 +40,7 @@
             </div>
 
             <div class="main-block">
-                <div class="block-content" id="news" hidden>
+                <div class="block-content" id="news" >
                     <div class="news-row">
                             <div class="news-block">
                                 <div class="news-info">
@@ -152,6 +145,8 @@
                         <a class="body">First 255 symbols of message</a>
                         <a class="date">Дата: 25.05.10</a>
                     </div>
+                </div>
+                <div class="block-content" id="tracks" hidden>
                 </div>
                 <div class="block-footer">
                     <div class="page-slider">
