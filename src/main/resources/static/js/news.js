@@ -39,6 +39,7 @@
        if(!this.up){
             this.self.style.borderTop = "1px dashed black";
             this.self.children[0].hidden = true;
+            this.self.children[1].hidden = true;
            this.timer = setInterval(()=>{
                    var h = parseInt(this.self.style.height.split("%")[0])-1;
                    if(h<=20){
@@ -54,6 +55,7 @@
    endAnimation(){
        this.self.style.borderTop = "none";
        this.self.children[0].hidden = false;
+       this.self.children[1].hidden = false;
    }
 }
 
@@ -65,10 +67,18 @@
             info.addEventListener("mouseover", function(ev){
                 if(elems.get(ev.target)!=null)
                     elems.get(ev.target).hover();
+                else{
+                    if(elems.get(ev.target.parentElement)!=null)
+                        elems.get(ev.target.parentElement).hover();
+                }
             });
             info.addEventListener("mouseout", function(ev){
                 if(elems.get(ev.target)!=null)
                     elems.get(ev.target).hoverOut();
+                else{
+                    if(elems.get(ev.target.parentElement)!=null)
+                        elems.get(ev.target.parentElement).hoverOut();
+                }
             });
    });
    

@@ -12,6 +12,16 @@ public class SessionManager {
 
     private Map<String, String> tokens = new HashMap<>();
 
+    public void setToken(String ip, String token){
+        if(!tokens.containsKey(ip))
+            tokens.replace(ip, token);
+        else tokens.put(ip, token);
+    }
+
+    public boolean containsUser(String ip){
+        return tokens.containsKey(ip);
+    }
+
     public String generateToken(int n){
         byte[] array = new byte[256];
         new Random().nextBytes(array);

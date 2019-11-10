@@ -17,15 +17,15 @@
     height: 7vh;
 
     padding: 1% 0;
-    
+
     display: table;
 
-    font-size: 35px;
+    font-size: 6vh;
 }
 .logo-head #logo{
 
-    width: 150px;
-    height: 70px;
+    width: 13vw;
+    height: 7vh;
     filter: drop-shadow(0 0 2px black);
 
     display: table-cell;
@@ -37,35 +37,81 @@
     display: table-cell;
     vertical-align: middle;
 
-    font-size: 50px;
+    font-size: 8vh;
     color: white;
-    text-shadow: 0 0 2px black;
-    
+    text-shadow: 0 0 0.8vh black;
+
 }
 .logo-head .log-buttons{
     text-align: center;
+    position: relative;
     display: table-cell;
+    vertical-align: middle;
     float: right;
-    margin: 2% 10%;
-    width: 200px;
+    margin: 4% 10%;
+    width: 10vw;
 
     border: 2px solid black;
     border-radius: 35px;
 
-
     background: white;
     color: black;
     text-decoration: none;
+    font-size: 4vh;
+
+    padding-top: 1vh;
+}
+.log-buttons .login{
+    width: 100%;
+    height: 50%;
+    display: block;
+}
+.logo-head .user-info{
+    text-align: center;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    float: right;
+    margin: 4% 10%;
+    width: 15vw;
+
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 35px;
+
+    background: #b30000;
+    color: white;
+    text-shadow: 0 0 0.8vh black;
+    text-decoration: none;
+    font-size: 2.5vh;
+
+    padding: 1vh 1vw;
+}
+.user-info .exit{
+
+    background: url(img/icon/exit.png);
+    background-size: cover;
+
+    width: 1.2vw;
+    height: 2.4vh;
+    margin-top: 0.8vh;
+
+    border: none;
+}
+.user-info .exit:hover{
+    cursor: pointer;
+    filter: invert(100%);
+}
+.user-info .exit:focus{
+    outline: none;
+}
+.log-buttons .login{
+    width: 100%;
+    height: 50%;
+    display: block;
 }
 a:link,a:visited{
     text-decoration: none;
     color: black;
-}
-.vertical-devider{
-    border-left: 3px solid black; 
-    height: 70px; 
-    width: 1px;
-    margin-right: 2%;
 }
 
 .main-wrapper{
@@ -117,9 +163,15 @@ a:link,a:visited{
     cursor: pointer;
 }
 
+.left-menu table:last-child{
+    margin-bottom: 30px;
+}
+
 .main-block{
     text-align: center;
 
+    min-height: 60vh;
+    max-height: 60vh;
     width: 85vw;
     height: 60vh;
     margin: 2% 2%;
@@ -130,7 +182,46 @@ a:link,a:visited{
 
     display: block;
     position: relative;
+
+    overflow-y: auto;
 }
+.news-block .edit{
+    background: url(img/icon/edit.png);
+    background-size: cover;
+
+    width: 1.2vw;
+    height: 2.4vh;
+
+    border: none;
+}
+.news-block .edit:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 2px black);
+}
+.news-block .edit:focus{
+    outline: none;
+}
+
+.news-block .remove{
+    background: url(img/icon/trash.png);
+    background-size: cover;
+
+    width: 1.2vw;
+    height: 2.4vh;
+    position: absolute;
+    top: 1vh;
+    right: 0.7vw;
+
+    border: none;
+}
+.news-block .remove:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 2px black);
+}
+.news-block .remove:focus{
+    outline: none;
+}
+
 .news-row{
     display: flex;
     justify-content: flex-start;
@@ -181,11 +272,90 @@ a:link,a:visited{
     background: #cecccc;
 
     color: red;
-
-    
 }
 
-.block-content .mail-message{
+.calendar-row{
+    display: flex;
+    justify-content: center;
+}
+.calendar-block{
+    display: table-cell;
+    position: relative;
+
+    width: 5vw;
+    height: 10vh;
+
+    border: 1px solid black;
+}
+.calendar-block:hover{
+    cursor: pointer;
+}
+
+html .shadow{
+    position: fixed;
+    display: none;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+
+    background: rgba(0, 0, 0, 0.9);
+}
+html .add-data{
+    position: fixed;
+    display: none;
+    left: 28vw;
+    top: 3vh;
+
+    padding: 1vw;
+
+    width: 40vw;
+    min-height: 40vh;
+    max-height: 90vh;
+    z-index: 999;
+
+    background: white;
+    border: 2px solid red;
+    border-radius: 5vh;
+}
+.add-data .title{
+    color: black;
+    text-align: center;
+
+    font-size: 5vh;
+}
+.add-data table{
+    margin: auto;
+    width: 20vw;
+}
+.add-data table tr td:first-child{
+    float: left;
+}
+
+.add-data table tr td:last-child{
+    float: right;
+}
+.add-data textarea{
+    max-width: 20vw;
+    min-width: 20vw;
+
+    min-height: 20vh;
+    max-height: 60vh;
+}
+
+.add-data .close{
+    float: right;
+    color: red;
+
+    font-size: 5vh;
+    transform: rotateZ(45deg);
+}
+.add-data .close:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.block-content .person-block{
 
     width: 100%;
     height: 10vh;
@@ -194,39 +364,53 @@ a:link,a:visited{
     padding: 5px;
 
 }
-.mail-message:hover{
+.person-block:hover{
 
     box-shadow: 2px 5px 10px black;
 
 }
-.mail-message .title{
+.person-block .fio{
     float: left;
     width: 100%;
 
     font-family: 'Courier New', Courier, monospace;
 }
-.title .author{
-    font-size: 11px;
-    font-family: 'Courier New', Courier, monospace;
-
-    background: #cecccc;
-    border-radius: 5px;
-
-    padding: 3px;
-}
-.mail-message .body{
+.person-block .group{
     bottom: 0;
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.mail-message .date{
+.person-block .buttons{
     float: right;
+}
+.person-block .buttons .edit{
+    width: 1.6vw;
+    height: 3.5vh;
+
+    background: url(img/icon/edit.png);
+    background-size: cover;
+    border: none;
+}
+.person-block .buttons .remove{
+    width: 1.6vw;
+    height: 3.5vh;
+
+    background: url(img/icon/trash.png);
+    background-size: cover;
+    border: none;
+}
+#personal .add{
+    width: 5vw;
+    height: 10vh;
+
+    display: block;
+
+    margin: 0 auto;
+    margin-top: 5%;
 }
 
 .main-block .block-footer{
     width: 100%;
-    position: absolute;
-    bottom: 0;
 }
 .block-footer .page-slider{
     text-align: center;

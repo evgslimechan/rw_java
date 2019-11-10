@@ -1,17 +1,9 @@
 function menuClick(clicked){
 
-    $(".left-menu")
-        .children("table")
-        .children("tbody")
-        .children("tr")
-        .children("td.active").removeClass("active");
-    $(clicked).addClass("active");
-    clearMainContent($(clicked).text().toLowerCase());
+    clearMainContent($(clicked).text().toLowerCase().trim());
 
 }
 
 function clearMainContent(show){
-    $(".block-content").hide();
-    var id = "#"+show;
-    $(id).show();
+    window.location.href = show+"";
 }

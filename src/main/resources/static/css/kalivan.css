@@ -3,6 +3,8 @@ body{
     background: url(img/kalivan.jpg);
     background-size: cover;
 }
+.kalivan{
+}
 	.letter {
         color: red;
 		font-family: sans-serif;
